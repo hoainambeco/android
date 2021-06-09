@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="60dp"
+        android:id="@+id/icAvatar"
+        android:scaleType="fitXY"
+        android:src="@drawable/emone"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/icAvatar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtName"
+            android:text="Nguyễn Hoài Nam"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="namnhph14161@fpt.edu.vn"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPhone"
+            android:text="0384490544"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+<ImageView
+    android:layout_width="48dp"
+    android:layout_height="60dp"
+    android:layout_alignParentRight="true"
+    android:id="@+id/icDelete"
+    android:src="@drawable/ic_close"/>
+
+</RelativeLayout>
