@@ -59,8 +59,6 @@ public class Adapter extends BaseAdapter {
 
         }
         Product product = arrlist.get(position);
-        holder.txtImage.setText(String.valueOf(arrlist.get(position)));
-        holder.txtImage.setBackgroundColor(product.getImage());
         holder.txtID.setText(product.getId());
         holder.txtName.setText(product.getName());
         holder.txtPrice.setText(String.valueOf(product.getPrice()));

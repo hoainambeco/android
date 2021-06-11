@@ -14,7 +14,7 @@ public class ProductDAO {
     SQL sqLiteHelper;
     SQLiteDatabase db;
     public static final String CREATEBASE_TABLE_PRODUCT
-            ="CREATE TABLE Contact(Id text primary key,Name text,Price real, Image text)";
+            ="CREATE TABLE PRODUCT(Id text primary key,Name text,Price text)";
     public ProductDAO(Context context){
         sqLiteHelper = new SQL(context);
         db=sqLiteHelper.getWritableDatabase();
@@ -22,11 +22,10 @@ public class ProductDAO {
     public int insertProduct(Product product)
     {
         ContentValues values=new ContentValues();
-        values.put("ID",product.getId());
-        values.put("Ten",product.getName());
+        values.put("Id",product.getId());
+        values.put("Name",product.getName());
         values.put("Price",product.getPrice());
-        values.put("Image",product.getImage());
-        if(db.insert("Contact",null,values)<0)
+        if(db.insert("PRODUCT",null,values)<0)
         {
             return -1;
         }
@@ -36,11 +35,10 @@ public class ProductDAO {
     public int updateProduct(Product product)
     {
         ContentValues values=new ContentValues();
-        values.put("ID",product.getId());
-        values.put("Ten",product.getName());
+        values.put("Id",product.getId());
+        values.put("Name",product.getName());
         values.put("Price",product.getPrice());
-        values.put("Image",product.getImage());
-        if(db.update("ID",values,"ID=?",new String[]{product.getId()})<0)
+        if(db.update("PRODUCT",values,"Id=?",new String[]{product.getId()})<0)
         {
             return -1;
         }
@@ -49,7 +47,7 @@ public class ProductDAO {
 
     public int deleteProduct(String ID )
     {
-        int kq=db.delete("ID","ID=?",new String[]{ID});
+        int kq=db.delete("PRODUCT","Id=?",new String[]{ID});
         if(kq<=0)
         {
             return -1;
@@ -61,7 +59,7 @@ public class ProductDAO {
     {
         List<String> ls=new ArrayList<>();
         // khai báo con trỏ đọc dữ liệu
-        Cursor cursor = db.query("Contact",null,null,null,
+        Cursor cursor = db.query("PRODUCT",null,null,null,
                 null,null,null);
         cursor.moveToFirst();
         while (cursor.isAfterLast()==false)
@@ -69,8 +67,8 @@ public class ProductDAO {
             Product product =new Product();
             product.setId(cursor.getString(0));
             product.setName(cursor.getString(1));
-            product.setPrice(Double.parseDouble(cursor.getString(1)));
-            ls.add(product.getId()+"-"+product.getName()+" - "+product.getPrice());
+            product.setPrice(cursor.getString(2));
+            ls.add("Mã SP: " + product.getId()+"\nTên SP: "+product.getName()+"\nGiá: "+product.getPrice());
             cursor.moveToNext();
         }
         cursor.close();

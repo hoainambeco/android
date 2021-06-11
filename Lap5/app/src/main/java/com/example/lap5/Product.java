@@ -3,17 +3,15 @@ package com.example.lap5;
 public class Product {
     private String Id;
     private String Name;
-    private double Price;
-    private int Image;
+    private String Price;
 
     public Product() {
     }
 
-    public Product(String id, String name, double price, int image) {
+    public Product(String id, String name, String price) {
         Id = id;
         Name = name;
         Price = price;
-        Image = image;
     }
 
     public String getId() {
@@ -32,19 +30,11 @@ public class Product {
         Name = name;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return Price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         Price = price;
-    }
-
-    public int getImage() {
-        return Image;
-    }
-
-    public void setImage(int image) {
-        Image = image;
     }
 }

@@ -19,8 +19,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ListView listView;
     List<String> lsID =new ArrayList<>();
-    List<Product> products = new ArrayList<>();
-    EditText txtID,txtName,txtPrice,txtImage;
+    EditText txtID,txtName,txtPrice;
     Button btnThem,btnSua,btnHienthi,btnXoa;
     ProductDAO dal;
     ArrayAdapter<String> adapter;
@@ -32,23 +31,19 @@ public class MainActivity extends AppCompatActivity {
         txtID=findViewById(R.id.txtID);
         txtName=findViewById(R.id.txtName);
         txtPrice=findViewById(R.id.txtPrice);
-        txtImage=findViewById(R.id.txtImage);
         btnThem=findViewById(R.id.btnThem);
         btnSua=findViewById(R.id.btnSua);
         btnHienthi=findViewById(R.id.btnHienthi);
         btnXoa=findViewById(R.id.btnXoa);
         dal = new ProductDAO(MainActivity.this);
-        products.add(new Product("01","Nam",5.5,Color.RED));
-        products.add(new Product("02","Mẫn",5.5,Color.BLUE));
-        products.add(new Product("03","Phong",5.5,Color.GREEN));
+
 
     }
     public void Them(View view) {
         Product product=new Product();
-        product.setId(String.valueOf(txtID.getText()));
+        product.setId(txtID.getText().toString());
         product.setName(txtName.getText().toString());
-        product.setImage(Integer.parseInt(txtImage.getText().toString()));
-        product.setPrice(Double.parseDouble(String.valueOf(txtPrice.getText())));
+        product.setPrice(txtPrice.getText().toString());
         if(dal.insertProduct(product)<0)
         {
             Toast.makeText(this,"Them that bai",Toast.LENGTH_LONG).show();
@@ -56,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this,"Them thanh cong",Toast.LENGTH_LONG).show();
         }
+
+        this.Hienthi(view);
     }
 
     public void Hienthi(View view) {
@@ -69,10 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void SUA(View view) {
         Product product =new Product();
-        product.setId(String.valueOf(txtID.getText()));
+        product.setId(txtID.getText().toString());
         product.setName(txtName.getText().toString());
-        product.setImage(Integer.parseInt(txtImage.getText().toString()));
-        product.setPrice(Double.parseDouble(String.valueOf(txtPrice.getText())));
+        product.setPrice(txtPrice.getText().toString());
 
         int kq=dal.updateProduct(product);
         if(kq<=0)
@@ -83,15 +79,14 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),"Sua thanh cong",Toast.LENGTH_LONG).show();
         }
-
+        this.Hienthi(view);
     }
 
     public void Xoa(View view) {
         Product product =new Product();
-        product.setId(String.valueOf(txtID.getText()));
+        product.setId(txtID.getText().toString());
         product.setName(txtName.getText().toString());
-        product.setPrice(Double.parseDouble(String.valueOf(txtPrice.getText())));
-        product.setImage(Integer.parseInt(txtImage.getText().toString()));
+        product.setPrice(txtPrice.getText().toString());
 
         int kq=dal.deleteProduct(product.getId());
         if(kq<=0)
@@ -102,6 +97,6 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),"Xoa thanh cong",Toast.LENGTH_LONG).show();
         }
-
+        this.Hienthi(view);
     }
 }
