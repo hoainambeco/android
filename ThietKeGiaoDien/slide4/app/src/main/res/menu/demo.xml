@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom"
+        android:title="Home" />
+    <item
+        android:id="@+id/sub"
+        app:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_launcher"
+        android:title="SUB" />
+
+    <item android:id="@+id/cat"
+        android:title="Cat"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+
+</menu>

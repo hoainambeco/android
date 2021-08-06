@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item1"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="never"
+        android:title="Home" />
+    <item
+        android:id="@+id/sub"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"
+        android:title="SUB" />
+
+    <item android:id="@+id/one"
+        android:title="one"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:id="@+id/tow"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"
+        android:title="tow" />
+
+    <item android:id="@+id/ba"
+        android:title="ba"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+</menu>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:title="Nguyễn Hoài Nam"
+        app:subtitle="namnhph14161"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:onClick="DatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 1 Date Picker" />
+
+
+    <Button
+        android:onClick="TimePickerDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 1 Time Picker" />
+    <Button
+        android:onClick="LoadingDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 2 Loading Dialog" />
+
+
+    <Button
+        android:onClick="SimpleDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 3 Simple Dialog" />
+    <Button
+        android:onClick="ListDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 3 List Dialog" />
+    <Button
+        android:onClick="SingleChoiceDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 3 Single Choice Dialog" />
+
+    <Button
+        android:onClick="MultiChoiceDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 3 Multi Choice Dialog" />
+
+    <Button
+        android:onClick="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bài 4 Login"/>
+</LinearLayout>
