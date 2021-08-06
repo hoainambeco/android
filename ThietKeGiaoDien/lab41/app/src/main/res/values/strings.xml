@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lab4.1</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Favorties</string>
+    <string name="title_dashboard">Schedules</string>
+    <string name="title_notifications">Music</string>
+</resources>
