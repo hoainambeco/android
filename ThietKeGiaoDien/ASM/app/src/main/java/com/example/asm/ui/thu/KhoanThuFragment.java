@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,15 +27,18 @@ public class KhoanThuFragment extends Fragment {
     private KhoanThuViewModel mViewModel;
     private RecyclerView mRv;
     private ThuRecyclerViewAdapter mAdapter;
-
     public static KhoanThuFragment newInstance() {
         return new KhoanThuFragment();
+    }
+
+    public KhoanThuViewModel getViewModel() {
+        return mViewModel;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRv = view.findViewById(R.id.recyclerView);
+        mRv = view.findViewById(R.id.RecyclerViewKhoanThu);
         mAdapter = new ThuRecyclerViewAdapter(getActivity());
         mRv.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRv.setAdapter(mAdapter);
@@ -44,6 +48,7 @@ public class KhoanThuFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.khoan_thu_fragment, container, false);
+
     }
 
     @Override
@@ -57,5 +62,6 @@ public class KhoanThuFragment extends Fragment {
             }
         });
     }
+
 
 }

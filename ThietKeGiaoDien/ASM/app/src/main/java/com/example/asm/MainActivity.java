@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.widget.Toolbar;
 
 import com.example.asm.dialog.LoaiThuDialog;
+import com.example.asm.dialog.ThuDialog;
 import com.example.asm.entity.LoaiThu;
+import com.example.asm.ui.thu.KhoanThuFragment;
 import com.example.asm.ui.thu.LoaiThuFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -49,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment  = fragments.get(fragments.size()-1);
                 if (fragment instanceof LoaiThuFragment){
                     LoaiThuDialog dialog = new LoaiThuDialog(currentContext,(LoaiThuFragment) fragment);
+                    dialog.show();
+                }
+                else if (fragment instanceof KhoanThuFragment){
+                    ThuDialog dialog = new ThuDialog(currentContext, (KhoanThuFragment) fragment);
                     dialog.show();
                 }
             }

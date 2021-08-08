@@ -15,7 +15,7 @@ import com.example.asm.entity.Thu;
 
 import org.jetbrains.annotations.NotNull;
 
-@Database(entities = {LoaiThu.class, Thu.class},version = 3)
+@Database(entities = {LoaiThu.class, Thu.class},version = 4)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract LoaiThuDao loaiThuDao();
     public abstract ThuDao thuDao();

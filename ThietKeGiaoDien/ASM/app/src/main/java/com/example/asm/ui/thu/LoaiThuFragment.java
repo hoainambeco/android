@@ -50,7 +50,7 @@ public class LoaiThuFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mrecyclerView = view.findViewById(R.id.recyclerView);
+        mrecyclerView = view.findViewById(R.id.recyclerViewLoaiThu);
         mAdapter = new LoaiThuRecyclerViewAdapter(getActivity());
         mrecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mrecyclerView.setAdapter(mAdapter);

@@ -6,13 +6,11 @@ import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.asm.R;
 import com.example.asm.entity.LoaiThu;
 import com.example.asm.ui.thu.LoaiThuFragment;
 import com.example.asm.ui.thu.LoaiThuViewModel;
-import com.google.android.material.textfield.TextInputEditText;
 
 public class LoaiThuDetailDialog {
     private LoaiThuViewModel mviewModel;
@@ -26,7 +24,7 @@ public class LoaiThuDetailDialog {
         mLayoutInflater = LayoutInflater.from(context);
         View view = mLayoutInflater.inflate(R.layout.dialog_detail_loai_thu,null);
         tvID = view.findViewById(R.id.tvid);
-        tvName = view.findViewById(R.id.tvName);
+        tvName = view.findViewById(R.id.tvName1);
         tvID.setText(""+loaiThu.lid);
         tvName.setText(loaiThu.ten);
         AlertDialog.Builder builder = new AlertDialog.Builder(context).setView(view).setNegativeButton("Đóng", new DialogInterface.OnClickListener() {

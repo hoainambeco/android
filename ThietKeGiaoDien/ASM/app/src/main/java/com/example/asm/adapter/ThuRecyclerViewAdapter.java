@@ -39,7 +39,7 @@ public class ThuRecyclerViewAdapter extends RecyclerView.Adapter<ThuRecyclerView
     @NotNull
     @Override
     public ThuViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View view   = layoutInflater.inflate(R.layout.recyclerview_loai_thu_item,parent,false);
+        View view   = layoutInflater.inflate(R.layout.recyclerview_thu_item,parent,false);
 
         return new ThuViewHolder(view);
     }
