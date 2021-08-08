@@ -48,7 +48,7 @@ public class ThuRecyclerViewAdapter extends RecyclerView.Adapter<ThuRecyclerView
     public void onBindViewHolder(@NonNull ThuViewHolder holder, int position) {
         if (mlisst != null){
             holder.txtname.setText(mlisst.get(position).ten);
-            holder.tvsotien.setText("" + mlisst.get(position).sotien + "đồng");
+            holder.tvsotien.setText("" + mlisst.get(position).sotien + " đồng");
             holder.position= position;
         }
     }

@@ -5,9 +5,13 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toolbar;
 
+import com.example.asm.dialog.ChiDialog;
+import com.example.asm.dialog.LoaiChiDialog;
 import com.example.asm.dialog.LoaiThuDialog;
 import com.example.asm.dialog.ThuDialog;
 import com.example.asm.entity.LoaiThu;
+import com.example.asm.ui.chi.KhoanChiFragment;
+import com.example.asm.ui.chi.LoaiChiFragment;
 import com.example.asm.ui.thu.KhoanThuFragment;
 import com.example.asm.ui.thu.LoaiThuFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -55,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (fragment instanceof KhoanThuFragment){
                     ThuDialog dialog = new ThuDialog(currentContext, (KhoanThuFragment) fragment);
+                    dialog.show();
+                }
+                if (fragment instanceof LoaiChiFragment){
+                    LoaiChiDialog dialog = new LoaiChiDialog(currentContext,(LoaiChiFragment) fragment);
+                    dialog.show();
+                }
+                else if (fragment instanceof KhoanChiFragment){
+                    ChiDialog dialog = new ChiDialog(currentContext, (KhoanChiFragment) fragment);
                     dialog.show();
                 }
             }

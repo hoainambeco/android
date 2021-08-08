@@ -13,7 +13,7 @@ public class Thu {
     @ColumnInfo(name = "ten")
     public String ten;
     @ColumnInfo(name = "sotien")
-    public float sotien;
+    public int sotien;
     @ColumnInfo(name = "ghichu")
     public String ghichu;
 

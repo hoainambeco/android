@@ -35,7 +35,7 @@ public class ThuDialog {
         View view = mLayoutInflater.inflate(R.layout.dialog_thu,null);
         edID = view.findViewById(R.id.txtID);
         adName = view.findViewById(R.id.edName);
-        etSoTien = view.findViewById(R.id.tvSotien);
+        etSoTien = view.findViewById(R.id.etSotien);
         etNote = view.findViewById(R.id.etNote);
         spType = view.findViewById(R.id.spType);
         mAdapter = new LoaiThuSpinnerAdapter(fragment.getActivity());
@@ -64,23 +64,24 @@ public class ThuDialog {
         }).setPositiveButton("Lưu", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Thu  LT = new Thu();
-                LT.ten = adName.getText().toString();
+                Thu  thu = new Thu();
+                thu.ten = adName.getText().toString();
                 try{
-                    LT.sotien = Float.parseFloat(etSoTien.getText().toString());
+                    thu.sotien = Integer.parseInt(etSoTien.getText().toString());
+                    thu.ghichu = etNote.getText().toString();
+                    thu.ltid = ((LoaiThu) mAdapter.getItem(spType.getSelectedItemPosition())).lid;
+                    if (mEditMode){
+                        thu.tid = Integer.parseInt(edID.getText().toString());
+                        mviewModel.update(thu);
+                    }else {
+                        mviewModel.insert(thu);
+                        Toast.makeText(context,"lưu thành công", Toast.LENGTH_SHORT).show();
+                    }
                 }catch (Exception exception){
                     Toast.makeText(context,"" + exception,Toast.LENGTH_SHORT).show();
+                    System.out.println(exception);
                 }
-                LT.ghichu = etNote.getText().toString();
-                LT.ltid = ((LoaiThu) mAdapter.getItem(spType.getSelectedItemPosition())).lid;
-                if (mEditMode){
-                    LT.tid = Integer.parseInt(edID.getText().toString());
-                    mviewModel.update(LT);
-                }else {
 
-                    mviewModel.insert(LT);
-                    Toast.makeText(context,"lưu thành công", Toast.LENGTH_SHORT).show();
-                }
             }
         });
         mDaDialog = builder.create();

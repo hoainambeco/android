@@ -14,6 +14,10 @@ import java.util.List;
 public interface ThuDao {
     @Query("SELECT * FROM thu")
     LiveData<List<Thu>> findAll();
+
+    @Query("SELECT sum(sotien) FROM thu")
+    LiveData<Integer> sumTongThu();
+
     @Insert
         void insert (Thu thu);
     @Update

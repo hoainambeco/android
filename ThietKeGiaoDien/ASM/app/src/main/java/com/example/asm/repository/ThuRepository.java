@@ -24,6 +24,10 @@ public class ThuRepository {
     public LiveData<List<Thu>> getAllThu() {
         return mAllThu;
     }
+    public LiveData<Integer> sumTongThu() {
+        return mthuDao.sumTongThu();
+    }
+
     public void insert(Thu thu){
         new InsertAsyncTask(mthuDao).execute(thu);
     }
