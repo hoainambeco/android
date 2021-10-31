@@ -73,6 +73,7 @@ public class ThuDialog {
                     if (mEditMode){
                         thu.tid = Integer.parseInt(edID.getText().toString());
                         mviewModel.update(thu);
+                        Toast.makeText(context,"Cập nhật thành công", Toast.LENGTH_SHORT).show();
                     }else {
                         mviewModel.insert(thu);
                         Toast.makeText(context,"lưu thành công", Toast.LENGTH_SHORT).show();

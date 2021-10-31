@@ -25,22 +25,22 @@
     <fragment
         android:id="@+id/nav_chi"
         android:name="com.example.asm.ui.chi.ChiFragment"
-        android:label="fragment_chi"
+        android:label="Quản lý Khoản chi"
         tools:layout="@layout/fragment_chi" />
     <fragment
         android:id="@+id/nav_Thu"
         android:name="com.example.asm.ui.thu.ThuFragment"
-        android:label="fragment_thu"
+        android:label="Quản lý thu"
         tools:layout="@layout/fragment_thu" />
     <fragment
         android:id="@+id/nav_GioiThieu"
         android:name="com.example.asm.ui.gioithieu.GioiThieuFragment"
-        android:label="fragment_gioi_thieu"
+        android:label="Giới thiệu ứng dụng"
         tools:layout="@layout/fragment_gioi_thieu" />
     <fragment
         android:id="@+id/nav_thongke"
         android:name="com.example.asm.ui.thongke.ThongKeFragment"
-        android:label="fragment_thong_ke"
+        android:label="Thống kê các khoản thu chi"
         tools:layout="@layout/fragment_thong_ke" />
     <fragment
         android:id="@+id/nav_Thoat"

@@ -55,6 +55,7 @@ public class LoaiThuFragment extends Fragment {
         mrecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mrecyclerView.setAdapter(mAdapter);
         final LoaiThuFragment loaiThuFragment = this;
+
         mAdapter.setOnItemEditClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(int position) {

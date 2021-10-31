@@ -21,6 +21,7 @@ import com.example.asm.R;
 import com.example.asm.adapter.ChiRecyclerViewAdapter;
 import com.example.asm.adapter.ItemClickListener;
 import com.example.asm.dialog.ChiDetailDialog;
+import com.example.asm.dialog.ChiDialog;
 import com.example.asm.entity.Chi;
 
 import java.util.List;
@@ -50,7 +51,7 @@ public class KhoanChiFragment extends Fragment {
             @Override
             public void onItemClick(int position) {
                 Chi chi = mAdapter.getItem(position);
-                ChiDetailDialog dialog = new ChiDetailDialog(getActivity(),khoanChiFragment,chi);
+                ChiDialog dialog = new ChiDialog(getActivity(),khoanChiFragment,chi);
                 dialog.show();
             }
         });

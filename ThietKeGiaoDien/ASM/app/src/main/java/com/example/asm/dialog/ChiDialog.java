@@ -32,7 +32,7 @@ public class ChiDialog {
     public ChiDialog(Context context, KhoanChiFragment fragment, Chi...chi) {
         mviewModel = fragment.getViewModel();
         mLayoutInflater = LayoutInflater.from(context);
-        View view = mLayoutInflater.inflate(R.layout.dialog_thu,null);
+        View view = mLayoutInflater.inflate(R.layout.dialog_chi,null);
         edID = view.findViewById(R.id.txtID);
         adName = view.findViewById(R.id.edName);
         etSoTien = view.findViewById(R.id.etSotien);
@@ -64,17 +64,18 @@ public class ChiDialog {
         }).setPositiveButton("Lưu", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Chi  thu = new Chi();
-                thu.ten = adName.getText().toString();
+                Chi  chi = new Chi();
+                chi.ten = adName.getText().toString();
                 try{
-                    thu.sotien = Integer.parseInt(etSoTien.getText().toString());
-                    thu.ghichu = etNote.getText().toString();
-                    thu.ltid = ((LoaiChi) mAdapter.getItem(spType.getSelectedItemPosition())).lid;
+                    chi.sotien = Integer.parseInt(etSoTien.getText().toString());
+                    chi.ghichu = etNote.getText().toString();
+                    chi.ltid = ((LoaiChi) mAdapter.getItem(spType.getSelectedItemPosition())).lid;
                     if (mEditMode){
-                        thu.tid = Integer.parseInt(edID.getText().toString());
-                        mviewModel.update(thu);
+                        chi.tid = Integer.parseInt(edID.getText().toString());
+                        mviewModel.update(chi);
+                        Toast.makeText(context,"Cập nhật thành công", Toast.LENGTH_SHORT).show();
                     }else {
-                        mviewModel.insert(thu);
+                        mviewModel.insert(chi);
                         Toast.makeText(context,"lưu thành công", Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception exception){

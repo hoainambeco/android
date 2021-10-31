@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ThongKeActivtity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thống kê"
+            android:gravity="center_horizontal"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"
+            android:textSize="30dp"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:orientation="vertical">
+                   <LinearLayout
+                       android:layout_marginBottom="8dp"
+                       android:layout_marginTop="8dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="20dp"
+                           android:textColor="@color/black"
+                           android:textStyle="bold"
+                           android:layout_weight="1"
+                           android:text="Tổng số Ô tô: "
+                           android:layout_marginLeft="15dp" />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="20dp"
+                           android:textColor="@color/black"
+                           android:textStyle="bold"
+                           android:text="0"
+                           android:layout_weight="1"
+                           android:id="@+id/tv_tong_oto"
+                           android:layout_marginLeft="5dp" />
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_marginBottom="8dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="20dp"
+                           android:textColor="@color/black"
+                           android:textStyle="bold"
+                           android:layout_weight="1"
+                           android:text="Tổng giá trị: "
+                           android:layout_marginLeft="15dp" />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="20dp"
+                           android:textColor="@color/black"
+                           android:textStyle="bold"
+                           android:layout_weight="1"
+                           android:text="0"
+                           android:id="@+id/tv_tong_gia_tri_oto"
+                           android:layout_marginLeft="5dp" />
+                   </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/teal_200"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:id="@+id/btn_go_to_activity_danh_sach"
+            android:text="Danh Sách"/>
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_go_to_activity_them"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Thêm"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/teal_200" />
+    </LinearLayout>
+
+</LinearLayout>

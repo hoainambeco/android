@@ -21,6 +21,7 @@ import com.example.asm.R;
 import com.example.asm.adapter.ItemClickListener;
 import com.example.asm.adapter.ThuRecyclerViewAdapter;
 import com.example.asm.dialog.ThuDetailDialog;
+import com.example.asm.dialog.ThuDialog;
 import com.example.asm.entity.Thu;
 
 import java.util.List;
@@ -50,7 +51,7 @@ public class KhoanThuFragment extends Fragment {
             @Override
             public void onItemClick(int position) {
                 Thu thu = mAdapter.getItem(position);
-                ThuDetailDialog dialog = new ThuDetailDialog(getActivity(),khoanThuFragment,thu);
+                ThuDialog dialog = new ThuDialog(getActivity(),khoanThuFragment,thu);
                 dialog.show();
             }
         });

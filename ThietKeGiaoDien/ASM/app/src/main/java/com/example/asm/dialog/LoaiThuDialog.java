@@ -48,6 +48,7 @@ public class LoaiThuDialog {
                 if (mEditMode){
                     LT.lid = Integer.parseInt(edID.getText().toString());
                     mviewModel.update(LT);
+                    Toast.makeText(context,"Cập nhật thành công", Toast.LENGTH_SHORT).show();
                 }else {
 
                     mviewModel.insert(LT);
